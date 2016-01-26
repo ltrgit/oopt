@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="TemplateUML">
+  <ClassDiagramComponents>
+    <Class name="Game" package="" visibility="public" isAbstract="true" xPosition="345.0" yPosition="15.0">
+      <Fields>
+        <Field name="maxPlayers" type="int" visibility="private"/>
+        <Field name="numPlayers" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="Play" returnType="void" visibility="public" isFinal="true"/>
+        <Method name="initialize" returnType="void" visibility="public" isAbstract="true"/>
+        <Method name="makeMove" returnType="void" visibility="public" isAbstract="true"/>
+        <Method name="endOfGame" returnType="void" visibility="public" isAbstract="true"/>
+        <Method name="printWinner" returnType="void" visibility="public" isAbstract="true"/>
+      </Methods>
+    </Class>
+    <Class name="Monopoly" package="" visibility="public" xPosition="152.0" yPosition="281.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="initialize" returnType="void" visibility="public"/>
+        <Method name="makeMove" returnType="void" visibility="public"/>
+        <Method name="endOfGame" returnType="void" visibility="public"/>
+        <Method name="printWinner" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Chess" package="" visibility="public" xPosition="345.0" yPosition="281.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="initialize" returnType="void" visibility="public"/>
+        <Method name="makeMove" returnType="void" visibility="public"/>
+        <Method name="endOfGame" returnType="void" visibility="public"/>
+        <Method name="printWinner" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Checkers" package="" visibility="public" xPosition="564.0" yPosition="281.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="initialize" returnType="void" visibility="public"/>
+        <Method name="makeMove" returnType="void" visibility="public"/>
+        <Method name="endOfGame" returnType="void" visibility="public"/>
+        <Method name="printWinner" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Main" package="" visibility="public" xPosition="93.0" yPosition="64.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Chess" target="Game"/>
+    <IsRelation name="is" source="Checkers" target="Game"/>
+    <UseRelation name="" source="Main" target="Game" sourceCardinality="1..1" targetCardinality="0..*"/>
+    <IsRelation name="is" source="Monopoly" target="Game"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
