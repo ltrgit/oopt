@@ -35,11 +35,22 @@ public class Zoo {
     public interface Predicate<T>{
         boolean test(T t);
     }
-    /* Get all cages that satisfy the predicate */
+    /* Get all cages that satisfy the predicate, is animal p */
     static List<Cage> filterByAnimal(List<Cage> cages, Predicate<Animal> p) {
         List<Cage> result = new ArrayList<>();
         for(Cage cage: cages) {
             if (p.test(cage.getAnimal())){
+                result.add(cage);
+            }
+        }
+        return result;
+    }
+    
+    /* A More generic version of filtering by animal */
+    static List<Cage> filtByAn(List<Cage> cages, Animal anim) {
+        List<Cage> result = new ArrayList<>();
+        for(Cage cage: cages) {
+            if(cage.getAnimal().getClass().equals(anim.getClass())) {
                 result.add(cage);
             }
         }
@@ -60,6 +71,7 @@ public class Zoo {
         zoo.addAnimal(new Pegasus());
         zoo.addAnimal(new PlatyPus());
         zoo.addAnimal(new Horse());
+        zoo.addAnimal(new Horse());
         
         /* Make them do tricks */
         for (Cage cage : zoo.getAnimals()) {
@@ -76,6 +88,14 @@ public class Zoo {
         System.out.println("Birds are in cages: ");
         /* Print all bird cage ids */
         for(Cage cage: birds) {
+            cage.printID();
+        }
+        
+        /* a bit different version for horse test */
+        Horse horse = new Horse();
+        List<Cage> horses = filtByAn(zoo.getCages(), new Horse());
+        System.out.println("Horses are in cages: \n");
+        for(Cage cage: horses) {
             cage.printID();
         }
     }
