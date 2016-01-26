@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Car">
+  <ClassDiagramComponents>
+    <Class name="Car" package="" visibility="public" xPosition="88.0" yPosition="48.0">
+      <Fields>
+        <Field name="manufacturer" type="String" visibility="private"/>
+        <Field name="manuYear" type="int" visibility="private"/>
+        <Field name="databaseID" type="int" visibility="private"/>
+        <Field name="model" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getType" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Customer" package="" visibility="public" xPosition="371.0" yPosition="48.0">
+      <Fields>
+        <Field name="databaseID" type="int" visibility="private"/>
+        <Field name="firstName" type="String" visibility="private"/>
+        <Field name="surName" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getName" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Rental" package="" visibility="public" xPosition="213.0" yPosition="272.0">
+      <Fields>
+        <Field name="customer" type="Customer" visibility="private"/>
+        <Field name="car" type="Car" visibility="private"/>
+        <Field name="startDate" type="LocalDate" visibility="private"/>
+        <Field name="endDate" type="LocalDate" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>
